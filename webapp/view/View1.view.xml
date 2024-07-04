@@ -1,0 +1,37 @@
+<mvc:View controllerName="islm.sample_project.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page title="Hello">
+					<Table id="myTable" items="{textsModel>/rows}">
+						<headerToolbar>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<Button text="Add" press="addRow"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="Select"/>
+							</Column>
+							<Column>
+								<Text text="Input"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<!-- Bind the Select control to the languageModel -->
+									<Select items="{textsModel>languages}">
+										<core:Item key="{textsModel>code}" text="{textsModel>description}"/>
+									</Select>
+									<Input/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
