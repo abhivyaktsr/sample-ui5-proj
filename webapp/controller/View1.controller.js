@@ -1,23 +1,27 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller, JSONModel) {
+	"sap/ui/core/mvc/Controller",
+  	"../util/formatter"
+], function (Controller, Formatter) {
   "use strict";
 
   return Controller.extend("islm.sample_project.controller.View1", {
+    formatter: Formatter,
+
+
     onInit: function () {
       this._languages = [{
         code: 'EN',
         description: 'English'
-					}, {
+      }, {
         code: 'DE',
         description: 'German'
-					}, {
+      }, {
         code: 'ZH',
         description: 'Chinese'
-					}, {
+      }, {
         code: 'SP',
         description: 'Spanish'
-					}];
+      }];
 
       this._selectedLanguageCodes = [this._languages[0].code];
       this._selectedLanguages = [this._languages[0]];
@@ -27,9 +31,11 @@ sap.ui.define([
           languages: this._languages,
           language: "EN",
           text: "Hello"
-						}]
+        }],
+        title: "Items"
       });
       this.getView().setModel(model, "textsModel");
+
     },
 
     addRow: function () {
@@ -50,7 +56,7 @@ sap.ui.define([
         text: ""
       });
 
-      // Add logic to update languages list in data.rows
+      // Add logic to update languages in data.rows
 
       model.setData(data);
     }

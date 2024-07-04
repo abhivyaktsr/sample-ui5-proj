@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"islm/sample_project/model/models"
+	"islm/sample_project/model/models",
+ 	"islm/sample_project/util/formatter"
 ], function (UIComponent, Device, models) {
   "use strict";
 

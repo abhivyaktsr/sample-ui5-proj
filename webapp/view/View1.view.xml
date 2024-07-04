@@ -6,6 +6,8 @@
 					<Table id="myTable" items="{textsModel>/rows}">
 						<headerToolbar>
 							<Toolbar>
+								<Title id="table-title" 
+									text="{parts: [{path: 'textsModel>/title'}, {path: 'textsModel>/rows/length'}], formatter: '.formatter.getTableTitle'}"/>
 								<ToolbarSpacer/>
 								<Button text="Add" press="addRow"/>
 							</Toolbar>
@@ -22,10 +24,10 @@
 							<ColumnListItem>
 								<cells>
 									<!-- Bind the Select control to the languageModel -->
-									<Select items="{textsModel>languages}">
+									<Select items="{textsModel>languages}" selectedKey="{textsModel>language}">
 										<core:Item key="{textsModel>code}" text="{textsModel>description}"/>
 									</Select>
-									<Input/>
+									<Input value="{textsModel>text}"/>
 								</cells>
 							</ColumnListItem>
 						</items>
